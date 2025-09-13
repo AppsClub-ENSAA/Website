@@ -66,12 +66,14 @@ function StatCard({ number, label, delay = 0 }: StatCardProps) {
       ref={ref} 
       className={`animate-in fade-in slide-in-from-bottom-4 duration-700 ${isVisible ? 'animate-in' : ''}`}
     >
-      <Card className="bg-gray-800 border-gray-700 hover:bg-gray-750 transition-all duration-300 hover:scale-105 hover:shadow-lg h-32">
-        <CardContent className="p-6 text-center h-full flex flex-col justify-center">
-          <div className="text-4xl font-bold text-purple-400 mb-2">
+      <Card className="bg-gray-800 border-gray-700 hover:bg-gray-750 transition-all duration-300 hover:scale-105 hover:shadow-lg h-36 lg:h-40">
+        <CardContent className="p-6 text-center h-full flex flex-col justify-center items-center gap-2 lg:gap-3">
+          <div className="text-4xl font-bold text-purple-400 tabular-nums leading-none">
             {count.toLocaleString()}{hasPlus ? "+" : ""}
           </div>
-          <div className="text-gray-300 font-medium">{label}</div>
+          <div className="text-gray-300 font-medium text-center leading-tight">
+            {label}
+          </div>
         </CardContent>
       </Card>
     </div>
