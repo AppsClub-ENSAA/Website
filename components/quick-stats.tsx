@@ -1,7 +1,7 @@
 "use client"
 
-import { useEffect, useState, useRef } from "react"
 import { Card, CardContent } from "@/components/ui/card"
+import { useState, useEffect, useRef } from "react"
 
 interface StatCardProps {
   number: string
@@ -11,59 +11,70 @@ interface StatCardProps {
 
 function StatCard({ number, label, delay = 0 }: StatCardProps) {
   const [count, setCount] = useState(0)
+  const [isVisible, setIsVisible] = useState(false)
   const [hasAnimated, setHasAnimated] = useState(false)
-  const cardRef = useRef<HTMLDivElement>(null)
+  const ref = useRef<HTMLDivElement>(null)
 
   const finalNumber = Number.parseInt(number.replace(/\D/g, ""))
+  const hasPlus = number.includes("+")
 
+  // Intersection Observer for visibility detection
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting && !hasAnimated) {
           setTimeout(() => {
-            let start = 0
-            const duration = 2000
-            const increment = finalNumber / (duration / 16)
-
-            const timer = setInterval(() => {
-              start += increment
-              if (start >= finalNumber) {
-                setCount(finalNumber)
-                clearInterval(timer)
-              } else {
-                setCount(Math.floor(start))
-              }
-            }, 16)
-
+            setIsVisible(true)
             setHasAnimated(true)
           }, delay)
         }
       },
-      { threshold: 0.5 },
+      { threshold: 0.3 }
     )
 
-    if (cardRef.current) {
-      observer.observe(cardRef.current)
+    if (ref.current) {
+      observer.observe(ref.current)
     }
 
     return () => observer.disconnect()
-  }, [finalNumber, delay, hasAnimated])
+  }, [delay, hasAnimated])
 
-  const formatNumber = (num: number) => {
-    if (number.includes("+")) return `${num}+`
-    return num.toString()
-  }
+  // Number animation logic
+  useEffect(() => {
+    if (isVisible) {
+      const duration = 2000 // 2 seconds
+      const steps = 60 // 60 steps for smooth animation
+      const increment = finalNumber / steps
+      let current = 0
+
+      const timer = setInterval(() => {
+        current += increment
+        if (current >= finalNumber) {
+          setCount(finalNumber)
+          clearInterval(timer)
+        } else {
+          setCount(Math.floor(current))
+        }
+      }, duration / steps)
+
+      return () => clearInterval(timer)
+    }
+  }, [isVisible, finalNumber])
 
   return (
-    <Card
-      ref={cardRef}
-      className="bg-gray-800 border-gray-700 hover:bg-gray-750 transition-all duration-300 hover:scale-105 hover:shadow-lg"
+    <div 
+      ref={ref} 
+      className={`animate-in fade-in slide-in-from-bottom-4 duration-700 ${isVisible ? 'animate-in' : ''}`}
     >
-      <CardContent className="p-6 text-center">
-        <div className="text-4xl font-bold text-purple-400 mb-2">{formatNumber(count)}</div>
-        <div className="text-gray-300 font-medium">{label}</div>
-      </CardContent>
-    </Card>
+      <Card className="bg-gray-800 border-gray-700 hover:bg-gray-750 transition-all duration-300 hover:scale-105 hover:shadow-lg h-32">
+        <CardContent className="p-6 text-center h-full flex flex-col justify-center">
+          <div className="text-4xl font-bold text-purple-400 mb-2">
+            {count.toLocaleString()}{hasPlus ? "+" : ""}
+          </div>
+          <div className="text-gray-300 font-medium">{label}</div>
+        </CardContent>
+      </Card>
+    </div>
   )
 }
 
