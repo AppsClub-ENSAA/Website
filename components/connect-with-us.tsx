@@ -118,7 +118,7 @@ export default function ConnectWithUs() {
                       rel="noopener noreferrer"
                       className={`flex items-center justify-center gap-2 bg-gray-700 border border-gray-600 text-white px-4 py-3 rounded-lg transition-all duration-300 ${social.color} hover:scale-105`}
                     >
-                      <social.icon className="h-5 w-5" />
+                      <social.icon className="h-6 w-6" />
                       <span className="font-medium">{social.label}</span>
                     </a>
                   ))}
