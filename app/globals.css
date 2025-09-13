@@ -1,0 +1,592 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.145 0 0);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.145 0 0);
+  --popover-foreground: oklch(0.985 0 0);
+  --primary: oklch(0.985 0 0);
+  --primary-foreground: oklch(0.205 0 0);
+  --secondary: oklch(0.269 0 0);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+  --accent: oklch(0.269 0 0);
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.396 0.141 25.723);
+  --destructive-foreground: oklch(0.637 0.237 25.331);
+  --border: oklch(0.269 0 0);
+  --input: oklch(0.269 0 0);
+  --ring: oklch(0.439 0 0);
+  --chart-1: oklch(0.488 0.243 264.376);
+  --chart-2: oklch(0.696 0.17 162.48);
+  --chart-3: oklch(0.769 0.188 70.08);
+  --chart-4: oklch(0.627 0.265 303.9);
+  --chart-5: oklch(0.645 0.246 16.439);
+  --radius: 0.625rem;
+  --sidebar: oklch(0.205 0 0);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.269 0 0);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(0.269 0 0);
+  --sidebar-ring: oklch(0.439 0 0);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+    background-color: rgb(17 24 39);
+    color: rgb(249 250 251);
+  }
+}
+
+/* Main page scrollbar styling */
+html {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(147, 51, 234, 0.6) transparent;
+}
+
+html::-webkit-scrollbar {
+  width: 12px;
+}
+
+html::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+html::-webkit-scrollbar-thumb {
+  background-color: rgba(147, 51, 234, 0.6);
+  border-radius: 6px;
+  border: 2px solid transparent;
+  background-clip: content-box;
+}
+
+html::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(147, 51, 234, 0.8);
+}
+
+/* Hide scrollbar on small devices */
+@media (max-width: 768px) {
+  html::-webkit-scrollbar {
+    display: none;
+  }
+
+  html {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+}
+
+/* Main page scrollbar styling */
+html {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(147, 51, 234, 0.6) transparent;
+}
+
+html::-webkit-scrollbar {
+  width: 12px;
+}
+
+html::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+html::-webkit-scrollbar-thumb {
+  background-color: rgba(147, 51, 234, 0.6);
+  border-radius: 6px;
+  border: 2px solid transparent;
+  background-clip: content-box;
+}
+
+html::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(147, 51, 234, 0.8);
+}
+
+/* Hide scrollbar on small devices */
+@media (max-width: 768px) {
+  html::-webkit-scrollbar {
+    display: none;
+  }
+
+  html {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+}
+
+/* Smooth transitions for components */
+.smooth-transition {
+  transition: background-color 150ms ease-in-out, color 150ms ease-in-out, border-color 150ms ease-in-out;
+}
+
+/* Team section custom styles */
+.team-scroll-container {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(147, 51, 234, 0.5) transparent;
+  overflow-x: auto;
+  overflow-y: visible !important;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  padding-top: 10px !important;
+  padding-bottom: 16px !important;
+}
+
+.team-scroll-container::-webkit-scrollbar {
+  height: 8px;
+}
+
+.team-scroll-container::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.team-scroll-container::-webkit-scrollbar-thumb {
+  background-color: rgba(147, 51, 234, 0.5);
+  border-radius: 4px;
+}
+
+.team-scroll-container::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(147, 51, 234, 0.7);
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 768px) {
+  .team-scroll-container::-webkit-scrollbar {
+    display: none;
+  }
+
+  .team-scroll-container {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+}
+
+/* Team card portrait specifications */
+.team-card-portrait {
+  width: 280px !important;
+  max-width: 280px !important;
+  min-width: 280px !important;
+  min-height: 620px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  padding: 16px !important;
+  border-radius: 8px !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  transition: all 0.3s ease;
+  background-color: rgb(31 41 55);
+}
+
+.team-card-portrait:hover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
+  transform: translateY(-4px) scale(1.01);
+}
+
+.image-container-portrait {
+  width: 248px !important;
+  max-width: 248px !important;
+  height: 400px !important;
+  border-radius: 6px !important;
+  margin: 0 auto 20px auto !important;
+  background: linear-gradient(135deg, #b352d3 0%, #4710c2 100%) !important;
+  box-shadow: 0 8px 25px rgba(179, 82, 211, 0.3), 0 4px 15px rgba(71, 16, 194, 0.2);
+  border: 1px solid rgba(179, 82, 211, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.image-container-portrait img {
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  border-radius: 6px;
+}
+
+.image-container-portrait:hover img {
+  transform: scale(1.05);
+}
+
+.image-container-portrait::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(179, 82, 211, 0.1) 0%, rgba(71, 16, 194, 0.1) 100%);
+  border-radius: 6px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.image-container-portrait-assistant {
+  width: 248px !important;
+  max-width: 248px !important;
+  height: 400px !important;
+  border-radius: 6px !important;
+  margin: 0 auto 20px auto !important;
+  background: linear-gradient(135deg, #4facfe, #0052d4) !important;
+  box-shadow: 0 8px 25px rgba(79, 172, 254, 0.3), 0 4px 15px rgba(0, 82, 212, 0.2);
+  border: 1px solid rgba(79, 172, 254, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.image-container-portrait-assistant img {
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  border-radius: 6px;
+}
+
+.image-container-portrait-assistant:hover img {
+  transform: scale(1.05);
+}
+
+.image-container-portrait-assistant::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(79, 172, 254, 0.1), rgba(0, 82, 212, 0.1));
+  border-radius: 6px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.text-content-portrait {
+  text-align: center !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 8px !important;
+  flex: 1 !important;
+  justify-content: flex-start !important;
+  min-height: 140px !important;
+}
+
+.member-name-portrait {
+  font-weight: bold !important;
+  font-size: 19px !important;
+  line-height: 1.3 !important;
+  min-height: 50px !important;
+  color: rgb(249 250 251);
+  display: -webkit-box !important;
+  -webkit-line-clamp: 2 !important;
+  -webkit-box-orient: vertical !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+}
+
+.member-name-portrait:hover {
+  text-decoration: underline;
+  color: rgb(168 85 247);
+}
+
+.member-role-portrait {
+  font-weight: 600 !important;
+  font-size: 15px !important;
+  line-height: 1.3 !important;
+  margin-bottom: 8px !important;
+  min-height: 40px !important;
+  color: rgb(196 181 253);
+  display: -webkit-box !important;
+  -webkit-line-clamp: 2 !important;
+  -webkit-box-orient: vertical !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+}
+
+.member-quote-portrait {
+  font-style: italic !important;
+  font-size: 14px !important;
+  line-height: 1.4 !important;
+  min-height: 60px !important;
+  color: rgb(156 163 175);
+  display: -webkit-box !important;
+  -webkit-line-clamp: 3 !important;
+  -webkit-box-orient: vertical !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+}
+
+/* Mobile responsive adjustments for team cards */
+@media (max-width: 640px) {
+  .team-card-portrait {
+    width: 260px !important;
+    min-width: 260px !important;
+    height: 580px !important;
+  }
+
+  .image-container-portrait {
+    width: 228px !important;
+    max-width: 228px !important;
+    height: 360px !important;
+  }
+
+  .text-content-portrait {
+    min-height: 160px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .team-card-portrait {
+    width: 240px !important;
+    min-width: 240px !important;
+    height: 540px !important;
+  }
+
+  .image-container-portrait {
+    width: 208px !important;
+    max-width: 208px !important;
+    height: 320px !important;
+  }
+
+  .text-content-portrait {
+    min-height: 180px !important;
+  }
+
+  .image-container-portrait-assistant {
+    width: 228px !important;
+    max-width: 228px !important;
+    height: 360px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .team-card-portrait {
+    width: 240px !important;
+    min-width: 240px !important;
+    height: 540px !important;
+  }
+
+  .image-container-portrait {
+    width: 208px !important;
+    max-width: 208px !important;
+    height: 320px !important;
+  }
+
+  .text-content-portrait {
+    min-height: 180px !important;
+  }
+
+  .image-container-portrait-assistant {
+    width: 208px !important;
+    max-width: 208px !important;
+    height: 320px !important;
+  }
+}
+
+/* Partnership section custom styles */
+.partnership-scroll-container {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(147, 51, 234, 0.5) transparent;
+  overflow-x: auto;
+  overflow-y: visible !important;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  padding-top: 10px !important;
+  padding-bottom: 16px !important;
+}
+
+.partnership-scroll-container::-webkit-scrollbar {
+  height: 8px;
+}
+
+.partnership-scroll-container::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.partnership-scroll-container::-webkit-scrollbar-thumb {
+  background-color: rgba(147, 51, 234, 0.5);
+  border-radius: 4px;
+}
+
+.partnership-scroll-container::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(147, 51, 234, 0.7);
+}
+
+/* Mobile responsive adjustments for partnerships */
+@media (max-width: 768px) {
+  .partnership-scroll-container::-webkit-scrollbar {
+    display: none;
+  }
+
+  .partnership-scroll-container {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+}
+
+/* Partnership card specifications */
+.partnership-card {
+  width: 280px !important;
+  max-width: 280px !important;
+  min-width: 280px !important;
+  height: 280px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  padding: 16px !important;
+  border-radius: 8px !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  transition: all 0.3s ease;
+  background-color: rgb(31 41 55);
+}
+
+.partnership-card:hover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
+  transform: translateY(-4px) scale(1.01);
+}
+
+.partnership-logo-container {
+  width: 248px !important;
+  max-width: 248px !important;
+  height: 200px !important;
+  border-radius: 6px !important;
+  margin: 0 auto 16px auto !important;
+  background-color: rgb(249 250 251) !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.partnership-name {
+  text-align: center !important;
+  font-weight: bold !important;
+  font-size: 18px !important;
+  line-height: 1.3 !important;
+  color: rgb(249 250 251);
+  display: -webkit-box !important;
+  -webkit-line-clamp: 2 !important;
+  -webkit-box-orient: vertical !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  flex: 1 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.partnership-name:hover {
+  color: rgb(168 85 247);
+}
+
+/* Mobile responsive adjustments for partnership cards */
+@media (max-width: 640px) {
+  .partnership-card {
+    width: 260px !important;
+    min-width: 260px !important;
+    height: 260px !important;
+  }
+
+  .partnership-logo-container {
+    width: 228px !important;
+    max-width: 228px !important;
+    height: 180px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .partnership-card {
+    width: 240px !important;
+    min-width: 240px !important;
+    height: 240px !important;
+  }
+
+  .partnership-logo-container {
+    width: 208px !important;
+    max-width: 208px !important;
+    height: 160px !important;
+  }
+}
+
+/* Dialog scrollbar styling */
+.dialog-scroll::-webkit-scrollbar {
+  width: 8px;
+}
+
+.dialog-scroll::-webkit-scrollbar-track {
+  background: rgb(55, 65, 81);
+  border-radius: 4px;
+}
+
+.dialog-scroll::-webkit-scrollbar-thumb {
+  background: rgb(147, 51, 234);
+  border-radius: 4px;
+}
+
+.dialog-scroll::-webkit-scrollbar-thumb:hover {
+  background: rgb(126, 34, 206);
+}
+
+/* Mobile dialog responsive adjustments */
+/* Old mobile rules removed - using specific .mobile-dialog class instead */
+
+/* Custom modal styling for training cells */
+.modal-backdrop {
+  backdrop-filter: blur(4px);
+}
+
+/* Custom scrollbar for modal content */
+.modal-content::-webkit-scrollbar {
+  width: 8px;
+}
+
+.modal-content::-webkit-scrollbar-track {
+  background: rgba(55, 65, 81, 0.3);
+  border-radius: 4px;
+}
+
+.modal-content::-webkit-scrollbar-thumb {
+  background: rgba(147, 51, 234, 0.6);
+  border-radius: 4px;
+}
+
+.modal-content::-webkit-scrollbar-thumb:hover {
+  background: rgba(147, 51, 234, 0.8);
+}

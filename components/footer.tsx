@@ -1,0 +1,102 @@
+"use client"
+
+export default function Footer() {
+  const quickLinks = [
+    { name: "Home", href: "#home" },
+    { name: "About", href: "#about" },
+    { name: "Training Cells", href: "#training" },
+    { name: "Past Events", href: "#events" },
+    { name: "Team", href: "#team" },
+    { name: "Partners", href: "#partnerships" },
+  ]
+
+  const scrollToSection = (href: string) => {
+    const element = document.querySelector(href)
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" })
+    }
+  }
+
+  return (
+    <footer className="bg-gray-800 border-t border-gray-700 py-12 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto">
+        <div className="grid md:grid-cols-3 gap-8">
+          {/* Logo and Description */}
+          <div className="space-y-4">
+            <div className="flex items-center space-x-3">
+              <div className="w-10 h-10 flex items-center justify-center">
+                <img 
+                  src="/images/apps white.png" 
+                  alt="AppsClub Logo" 
+                  className="w-full h-full object-contain"
+                />
+              </div>
+              <div>
+                <h3 className="text-xl font-bold text-white">AppsClub</h3>
+                <p className="text-xs text-purple-400">ENSA Agadir</p>
+              </div>
+            </div>
+            <p className="text-gray-400 text-sm leading-relaxed">
+              Empowering IT students at ENSA Agadir through cutting-edge training, real-world projects, and a vibrant
+              community.
+            </p>
+          </div>
+
+          {/* Quick Links */}
+          <div>
+            <h4 className="text-lg font-semibold text-white mb-4">Quick Links</h4>
+            <ul className="space-y-2">
+              {quickLinks.map((link) => (
+                <li key={link.name}>
+                  <button
+                    onClick={() => scrollToSection(link.href)}
+                    className="text-gray-400 hover:text-purple-400 transition-colors duration-200 text-sm"
+                  >
+                    {link.name}
+                  </button>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Contact */}
+          <div>
+            <h4 className="text-lg font-semibold text-white mb-4">Contact</h4>
+            <div className="space-y-2 text-sm">
+              <p className="text-gray-400">📧 appsclubensaa22@gmail.com</p>
+              <p className="text-gray-400">📍 ENSA Agadir, Morocco</p>
+              <p className="text-gray-400">🕒 Available 24/7</p>
+            </div>
+          </div>
+        </div>
+
+        {/* Bottom Section */}
+        <div className="border-t border-gray-700 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
+          <p className="text-gray-400 text-sm">© 2025/2026 AppsClub ENSA Agadir. All rights reserved.</p>
+          <div className="flex items-center gap-4 mt-4 md:mt-0 text-sm">
+            <span className="text-gray-400">Developed by</span>
+            <a
+              href="https://www.linkedin.com/in/youssef-tag/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-purple-400 hover:text-purple-300 transition-colors duration-200 flex items-center gap-1"
+            >
+              <span className="text-blue-400">in</span>
+              Youssef Taguejgalet
+            </a>
+            <span className="text-gray-400">and</span>
+            <a
+              href="https://www.linkedin.com/in/houcine-gahboub-32955b32b"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-purple-400 hover:text-purple-300 transition-colors duration-200 flex items-center gap-1"
+            >
+              <span className="text-blue-400">in</span>
+              Houcine Gahboub
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  )
+}
