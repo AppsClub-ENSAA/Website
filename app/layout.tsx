@@ -7,58 +7,37 @@ const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NODE_ENV === 'production' ? 'https://appsclub.info' : 'http://localhost:3000'),
-  title: "AppsClub ENSA Agadir | Morocco's Leading IT Student Community",
-  description: "Join 650+ IT students at AppsClub ENSA Agadir. Master programming, data science, cybersecurity & more through hands-on training programs in Morocco's top technology hub.",
-  keywords: ["AppsClub", "ENSA Agadir", "IT Morocco", "Programming", "Data Science", "Cybersecurity", "Web Development", "Student Community"],
-  authors: [
-    { name: "AppsClub ENSA Agadir" },
-    { name: "Youssef Taguejgalet", url: "https://www.linkedin.com/in/youssef-tag/" }
-  ],
+  title: "AppsClub - ENSA Agadir",
+  description: "Weekly trainings, real-world projects, expert talks. Join 650+ IT students at Morocco's leading tech community.",
+  keywords: ["AppsClub", "ENSA Agadir", "IT community", "programming", "tech training", "Morocco"],
+  authors: [{ name: "AppsClub ENSA Agadir" }],
   openGraph: {
-    type: "website",
-    locale: "en_US",
+    title: "AppsClub - ENSA Agadir",
+    description: "Weekly trainings, real-world projects, expert talks. Join 650+ IT students at Morocco's leading tech community.",
     url: "https://appsclub.info",
-    siteName: "AppsClub ENSA Agadir",
-    title: "AppsClub ENSA Agadir | Morocco's Leading IT Student Community",
-    description: "🚀 Join 650+ IT students mastering technology at Morocco's premier engineering school. Training programs in Programming, Data Science, Cybersecurity & Web Development.",
+    siteName: "AppsClub",
     images: [
       {
         url: "/images/logo1 background.png",
-        width: 1200,
-        height: 630,
-        alt: "AppsClub ENSA Agadir - Morocco's Leading IT Student Community",
-        type: "image/png",
+        width: 512,
+        height: 512,
+        alt: "AppsClub ENSA Agadir",
       },
     ],
+    locale: "en_US",
+    type: "website",
   },
   twitter: {
-    card: "summary_large_image",
-    site: "@appsclub_ensaa",
-    title: "AppsClub ENSA Agadir | Morocco's Leading IT Student Community",
-    description: "🚀 Join 650+ IT students mastering technology at Morocco's premier engineering school. Programming • Data Science • Cybersecurity • Web Development",
+    card: "summary",
+    title: "AppsClub - ENSA Agadir", 
+    description: "Weekly trainings, real-world projects, expert talks. Join 650+ IT students at Morocco's leading tech community.",
     images: ["/images/logo1 background.png"],
   },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
-    },
-  },
   icons: {
-    icon: [
-      { url: '/favicon.ico' },
-      { url: '/icon-192.svg', sizes: '192x192', type: 'image/svg+xml' },
-      { url: '/icon-512.svg', sizes: '512x512', type: 'image/svg+xml' },
-    ],
+    icon: '/favicon.ico',
     shortcut: '/favicon.ico',
     apple: '/apple-touch-icon.svg',
   },
-  manifest: '/manifest.json',
 }
 
 export default function RootLayout({
