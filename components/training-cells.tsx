@@ -143,20 +143,20 @@ export default function TrainingCells() {
               {/* Close Button */}
               <button
                 onClick={closeModal}
-                className="absolute top-4 right-4 z-10 text-gray-400 hover:text-white transition-colors duration-200 bg-gray-900/80 p-2 rounded-full"
+                className="absolute top-2 right-2 sm:top-4 sm:right-4 z-10 text-gray-400 hover:text-white transition-colors duration-200 bg-gray-900/80 p-2 rounded-full"
               >
                 <X className="h-5 w-5" />
               </button>
               
               {/* Modal Header */}
-              <div className="p-6 border-b border-gray-700">
+              <div className="p-6 border-b border-gray-700 pr-12 sm:pr-6">
                 <div className="flex items-center gap-4">
                   <div
                     className={`w-12 h-12 bg-gradient-to-br ${selectedCell.gradient} rounded-full flex items-center justify-center flex-shrink-0`}
                   >
                     <div className="text-white">{selectedCell.icon}</div>
                   </div>
-                  <h2 className="text-2xl font-bold text-white">{selectedCell.title}</h2>
+                  <h2 className="text-2xl font-bold text-white pr-2 sm:pr-0">{selectedCell.title}</h2>
                 </div>
               </div>
               
