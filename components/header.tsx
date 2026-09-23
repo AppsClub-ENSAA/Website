@@ -17,19 +17,25 @@ export default function Header() {
   }, [])
 
   const navItems = [
-    { name: "Home", href: "#home" },
-    { name: "About", href: "#about" },
-    { name: "Vision", href: "#vision" },
-    { name: "Training Cells", href: "#training" },
-    { name: "Past Events", href: "#events" },
-    { name: "Past Talks", href: "#talks" },
-    { name: "Team", href: "#team" },
-    { name: "Partners", href: "#partnerships" },
-    { name: "Connect", href: "#connect" },
+    { name: "Home", href: "/#home" },
+    { name: "About", href: "/#about" },
+    { name: "Vision", href: "/#vision" },
+    { name: "Training Cells", href: "/#training" },
+    { name: "Past Events", href: "/#events" },
+    { name: "Past Talks", href: "/#talks" },
+    { name: "Team", href: "/#team" },
+    { name: "Partners", href: "/#partnerships" },
+    { name: "Connect", href: "/#connect" },
   ]
 
   const scrollToSection = (href: string) => {
-    const element = document.querySelector(href)
+    const [path, hash] = href.split("#")
+    if (path && window.location.pathname !== path) {
+      window.location.href = href
+      setIsMobileMenuOpen(false)
+      return
+    }
+    const element = document.querySelector(`#${hash}`)
     if (element) {
       element.scrollIntoView({ behavior: "smooth" })
     }
@@ -82,7 +88,7 @@ export default function Header() {
               size="sm"
               className="bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 text-white font-semibold shadow-lg hover:shadow-xl smooth-transition text-xs sm:text-sm px-3 sm:px-4"
             >
-              <a href="https://forms.gle/w2npKDCXWX99kDVC6" target="_blank" rel="noopener noreferrer">
+              <a href="https://forms.gle/9mud4T3cMUrwymQo6" target="_blank" rel="noopener noreferrer">
                 Register
               </a>
             </Button>

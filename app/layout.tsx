@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     siteName: "AppsClub",
     images: [
       {
-        url: "/images/logo1 background.png",
+        url: "/images/logo1-background.png",
         width: 512,
         height: 512,
         alt: "AppsClub ENSA Agadir",
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     card: "summary",
     title: "AppsClub - ENSA Agadir", 
     description: "Weekly trainings, real-world projects, expert talks. Join 650+ IT students at Morocco's leading tech community.",
-    images: ["/images/logo1 background.png"],
+    images: ["/images/logo1-background.png"],
   },
   icons: {
     icon: '/favicon.ico',

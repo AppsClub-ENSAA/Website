@@ -1,224 +1,67 @@
 "use client"
 
+import { useState } from "react"
+import Link from "next/link"
 import { Card } from "@/components/ui/card"
-import { Linkedin } from "lucide-react"
-
-interface TeamMember {
-  id: number
-  name: string
-  role: string
-  quote: string
-  linkedin: string
-  image: string
-  isAssistant?: boolean
-}
-
-const teamMembers: TeamMember[] = [
-  {
-    id: 1,
-    name: "Youssef Taguejgalet",
-    role: "President",
-    quote: "Leading with purpose, not pressure.",
-    linkedin: "https://www.linkedin.com/in/youssef-tag/",
-    image: "/images/team/Taguejgalet.png",
-  },
-  {
-    id: 2,
-    name: "Nassima Charite",
-    role: "Vice President",
-    quote: "Together, we turn ideas into action.",
-    linkedin: "https://www.linkedin.com/in/nassima-charite-387319260/?lipi=urn%3Ali%3Apage%3Ad_flagship3_people_connections%3BZ2%2B%2FmTLGQIeNoH%2BalXdS%2BA%3D%3D",
-    image: "/images/team/Charite.png",
-  },
-  {
-    id: 3,
-    name: "Hajar Baais",
-    role: "Secretary",
-    quote: "Alone we dream, together we achieve.",
-    linkedin: "https://www.linkedin.com/in/hajar-baais-b91450321/?lipi=urn%3Ali%3Apage%3Ad_flagship3_people_connections%3BZ2%2B%2FmTLGQIeNoH%2BalXdS%2BA%3D%3D",
-    image: "/images/team/Baais.png",
-  },
-  {
-    id: 4,
-    name: "Reda Erraoui",
-    role: "Treasurer",
-    quote: "Behind every successful project is a team and a balanced budget.",
-    linkedin: "https://www.linkedin.com/in/reda-erraoui-79a2a6130/?lipi=urn%3Ali%3Apage%3Ad_flagship3_people_connections%3BZ2%2B%2FmTLGQIeNoH%2BalXdS%2BA%3D%3D",
-    image: "/images/team/Erraoui.png",
-  },
-  {
-    id: 5,
-    name: "Lahoussine El Hossni",
-    role: "Logistics Officer",
-    quote: "Behind the scenes, ahead of the need.",
-    linkedin: "https://www.linkedin.com/in/lahoussine-el-hossni/?lipi=urn%3Ali%3Apage%3Ad_flagship3_people_connections%3BZ2%2B%2FmTLGQIeNoH%2BalXdS%2BA%3D%3D",
-    image: "/images/team/El Hossni.png",
-  },
-  {
-    id: 6,
-    name: "Hiba Ait Belmoumene",
-    role: "Technical Lead",
-    quote: "Tech alone isn't enough. That's why I lead.",
-    linkedin: "https://www.linkedin.com/in/hiba-a-0974032a1/?lipi=urn%3Ali%3Apage%3Ad_flagship3_search_srp_people%3BUQQaIuT0Su%2BzY%2FCuKVNJEg%3D%3D",
-    image: "/images/team/Ait Belmoumene .png",
-  },
-  {
-    id: 7,
-    name: "Houcine Gahboub",
-    role: "Training Officer",
-    quote: "The more you know, the more you realize you don't know.",
-    linkedin: "https://www.linkedin.com/in/houcine-gahboub-32955b32b?miniProfileUrn=urn%3Ali%3Afsd_profile%3AACoAAFMyjREBvVyMBHpPplY_RT1bT9fvUA2k1Zg&lipi=urn%3Ali%3Apage%3Ad_flagship3_search_srp_all%3BOkmbbJBSQNOh4w0AzpH4Gw%3D%3D",
-    image: "/images/team/Gahboub.png",
-  },
-  {
-    id: 8,
-    name: "Hajar Azaou",
-    role: "Training Assistant",
-    quote: "Here to guide you as you learn and grow.",
-    linkedin: "https://www.linkedin.com/in/hajar-azaou-46b53b27a/overlay/about-this-profile/?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base%3Bovv4qgDkSc2Fxcj8wAdwCg%3D%3D",
-    image: "/images/team/Azaou.png",
-  },
-  {
-    id: 9,
-    name: "Othmane Elarroussi",
-    role: "CP Cell Lead",
-    quote: "Code. Compete. Improve.",
-    linkedin: "https://www.linkedin.com/in/othmane-elarroussi?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAFJzEVUB-DJU7W4rD2nKbCqlb1Gz-jLLTlg&lipi=urn%3Ali%3Apage%3Ad_flagship3_search_srp_all%3BhJq7Ej%2F1Q3ahsdIq6u0%2BjQ%3D%3D",
-    image: "/images/team/Elarroussi.png",
-  },
-  {
-    id: 10,
-    name: "Yassine Moutaoikkil Basskar",
-    role: "Data Cell Lead",
-    quote: "Data is our soldier. Intelligence is our victory.",
-    linkedin: "https://www.linkedin.com/in/yassine-m-basskar?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAD6j8swB4S_kirhmu6XUWZ97bDT12djg_wc&lipi=urn%3Ali%3Apage%3Ad_flagship3_search_srp_all%3Bj4ciQ%2FesQraaJEFrCEzE2w%3D%3D",
-    image: "/images/team/Moutaoikkil Basskar.png",
-  },
-  {
-    id: 11,
-    name: "Hafsa Mokhlis",
-    role: "Cybersecurity Cell Lead",
-    quote: "Building, guiding, securing. That's the mission.",
-    linkedin: "https://www.linkedin.com/in/hafsa-mokhlis-a5521a210?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAADVs8mEB-0JKKgNSUiXi_7nrHkmVFJC55zc&lipi=urn%3Ali%3Apage%3Ad_flagship3_search_srp_all%3BqUBDYSgdSnau9bjDaqPkbw%3D%3D",
-    image: "/images/team/Mokhlis.png",
-  },
-  {
-    id: 12,
-    name: "Mohamed Amine Bougraou",
-    role: "Design Officer",
-    quote: "Less noise. More impact.",
-    linkedin: "https://www.linkedin.com/in/mohamed-amine-bougraou-38b792335?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAFRMjJsBJ6n2rhPzVgzoIbmEaLtGC30PnU4&lipi=urn%3Ali%3Apage%3Ad_flagship3_search_srp_all%3BTljmfhs9SheGDkP%2FSBYgTw%3D%3D",
-    image: "/images/team/Bougraou.png",
-  },
-  {
-    id: 13,
-    name: "Mohamed Essadik El Maghraoui",
-    role: "Photographer",
-    quote: "Capturing the soul of Apps Club.",
-    linkedin: "https://www.linkedin.com/in/mohamed-essadik-el-maghraoui-a62607361/",
-    image: "/images/team/El maghraoui .png",
-  },
-  {
-    id: 14,
-    name: "Achraf Boulhem",
-    role: "CP Cell Assistant",
-    quote: "Keeping contests running smoothly and efficiently.",
-    linkedin: "https://www.linkedin.com/in/achraf-boulhem-b72286294?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAEc7TwYB9N4-K-wP6PnXfrr-beD8f_FNW8c&lipi=urn%3Ali%3Apage%3Ad_flagship3_search_srp_all%3Bq4a%2BjC0ZSkCBM0kzqhGIGQ%3D%3D",
-    image: "/images/team/Boulhem.png",
-    isAssistant: true,
-  },
-  {
-    id: 15,
-    name: "Abd el aziz Hatafi",
-    role: "CP Cell Assistant",
-    quote: "Code. Test. Optimize. Repeat.",
-    linkedin: "https://www.linkedin.com/in/abd-el-aziz-hatafi-8539a7312?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAE-Gaf8B_bG7Fgvq7tindzuWAxwQFNB7zjM&lipi=urn%3Ali%3Apage%3Ad_flagship3_search_srp_all%3B%2F3F4Xj9sQcKvYKsmlkiKMg%3D%3D",
-    image: "/images/team/Hatafi.png",
-    isAssistant: true,
-  },
-  {
-    id: 16,
-    name: "Hiba Loughzal",
-    role: "Data Cell Assistant",
-    quote: "Empowering insights, leading with data.",
-    linkedin: "https://www.linkedin.com/in/hiba-loughzal-3b5414252?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAD5afjkBeTtqWxuXTT21fhghuiIoAxbWKFA&lipi=urn%3Ali%3Apage%3Ad_flagship3_search_srp_all%3BBYTdGYpUSxmsR%2BrPBVCwkg%3D%3D",
-    image: "/images/team/Loughzal.png",
-    isAssistant: true,
-  },
-  {
-    id: 17,
-    name: "Amina TOUMI",
-    role: "Data Cell Assistant",
-    quote: "Data is the new fuel",
-    linkedin: "https://www.linkedin.com/in/amina-toumi-b12155252?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAD5QaP4BJHK1Ft_YyV6EAEH5tOyDeZZgBZA&lipi=urn%3Ali%3Apage%3Ad_flagship3_search_srp_all%3BcQRLMYeQSPui7MspHY5C2Q%3D%3D",
-    image: "/images/team/TOUMI.png",
-    isAssistant: true,
-  },
-  {
-    id: 18,
-    name: "Abdelhak Ait Kadir",
-    role: "Cybersecurity Cell Assistant",
-    quote: "Cybersecurity begins where distraction ends.",
-    linkedin: "https://www.linkedin.com/in/ait-kadir/",
-    image: "/images/team/Ait Kadir .png",
-    isAssistant: true,
-  },
-  {
-    id: 19,
-    name: "Hicham Lamine",
-    role: "Preparatory Cycle Cell Assistant",
-    quote: "Guiding learners through code and logic.",
-    linkedin: "https://www.linkedin.com/in/hicham-lamine-aa18a722b/",
-    image: "/images/team/Lamine.png",
-    isAssistant: true,
-  },
-  {
-    id: 20,
-    name: "Abdessalam Ait-oubanali",
-    role: "Development Cell Assistant",
-    quote: "Learn, Share, Code together !",
-    linkedin: "https://www.linkedin.com/in/abdessalam-ait-oubanali-13134528b?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAEZZ-nUB73-AS94ZmiEdZ-e57_u2ncsBHHk&lipi=urn%3Ali%3Apage%3Ad_flagship3_search_srp_all%3BpiVutJ0IRL2Lvs35puXmpg%3D%3D",
-    image: "/images/team/Ait-oubanali.png",
-    isAssistant: true,
-  },
-]
+import { Linkedin, Github, Instagram, Mail, X, ArrowRight } from "lucide-react"
+import { currentTeamMembers, TeamMember, SHOW_MEMBER_LINKEDIN } from "@/data/team"
 
 export default function Team() {
+  const [selectedMember, setSelectedMember] = useState<TeamMember | null>(null)
+
+  const getCurrentBureau = (member: TeamMember) => {
+    const history = Array.isArray(member.bureauHistory) ? member.bureauHistory : []
+    const current = history.find((assignment) => !assignment.toYear)
+    return current?.bureau || member.department || ""
+  }
+
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-900">
+    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-900 relative" id="team">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">Team</h2>
-          <p className="text-xl text-gray-400 max-w-3xl mx-auto mb-8">
+          <p className="text-xl text-gray-400 max-w-3xl mx-auto mb-4">
             Meet the passionate individuals driving AppsClub's mission forward
           </p>
+          <div className="mb-4">
+            <Link
+              href="/members"
+              className="inline-flex items-center gap-2 text-purple-400 hover:text-purple-300 font-semibold transition-colors duration-200"
+            >
+              View all members <ArrowRight className="h-4 w-4" />
+            </Link>
+          </div>
           <p className="text-sm text-gray-500">← Scroll horizontally to see all team members →</p>
         </div>
 
         <div className="team-scroll-container">
           <div className="flex gap-6 w-max px-2 py-2">
-            {teamMembers.map((member) => (
+            {currentTeamMembers.map((member) => (
               <Card
                 key={member.id}
-                className="team-card-portrait bg-gray-800 border-gray-700 hover:bg-gray-750 relative"
+                onClick={() => setSelectedMember(member)}
+                className="team-card-portrait bg-gray-800 border-gray-700 hover:bg-gray-750 relative cursor-pointer group"
               >
-                <a
-                  href={member.linkedin}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="absolute top-3 left-3 z-10 text-blue-400 hover:text-blue-300 transition-colors duration-200 bg-gray-900/80 p-1.5 rounded-full"
-                >
-                  <Linkedin className="h-4 w-4" />
-                </a>
+                {SHOW_MEMBER_LINKEDIN && member.linkedin && (
+                  <a
+                    href={member.linkedin}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={(e) => e.stopPropagation()}
+                    className="absolute top-3 left-3 z-10 text-blue-400 hover:text-blue-300 transition-colors duration-200 bg-gray-900/80 p-1.5 rounded-full"
+                    aria-label={`${member.name}'s LinkedIn`}
+                  >
+                    <Linkedin className="h-4 w-4" />
+                  </a>
+                )}
                 <div className={member.isAssistant ? "image-container-portrait-assistant" : "image-container-portrait"}>
                   <img
                     src={member.image}
                     alt={member.name}
-                    className="w-full h-full object-cover rounded-md"
+                    className="w-full h-full object-cover rounded-md group-hover:scale-105 transition-transform duration-300"
                     onError={(e) => {
                       const target = e.target as HTMLImageElement
-                      // Create a simple data URL with the member's initials
-                      const initials = member.name.split(" ").map(n => n[0]).join("").substring(0, 2)
+                      const initials = member.name.split(" ").map((n) => n[0]).join("").substring(0, 2)
                       const svg = `data:image/svg+xml;base64,${btoa(`
                         <svg width="250" height="400" xmlns="http://www.w3.org/2000/svg">
                           <rect width="100%" height="100%" fill="#374151"/>
@@ -232,13 +75,115 @@ export default function Team() {
                 <div className="text-content-portrait">
                   <div className="member-name-portrait">{member.name}</div>
                   <div className="member-role-portrait text-purple-400">{member.role}</div>
-                  <div className="member-quote-portrait">"{member.quote}"</div>
+                  {member.quote && (
+                    <div className="member-quote-portrait line-clamp-2">"{member.quote}"</div>
+                  )}
                 </div>
               </Card>
             ))}
           </div>
         </div>
       </div>
+
+      {/* Member Details Modal */}
+      {selectedMember && (
+        <div
+          className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm animate-in fade-in duration-200"
+          onClick={() => setSelectedMember(null)}
+        >
+          <div
+            className="bg-gray-900 border border-gray-800 rounded-2xl max-w-lg w-full max-h-[90vh] overflow-y-auto p-6 md:p-8 relative shadow-2xl animate-in zoom-in-95 duration-200"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              onClick={() => setSelectedMember(null)}
+              className="absolute top-4 right-4 p-2 bg-gray-800 rounded-full text-gray-400 hover:text-white hover:bg-gray-700 transition-colors"
+              aria-label="Close modal"
+            >
+              <X size={20} />
+            </button>
+
+            <div className="flex flex-col items-center mt-2">
+              <div className="w-36 h-36 md:w-44 md:h-44 rounded-full overflow-hidden border-4 border-purple-500/30 mb-6 shadow-lg">
+                <img
+                  src={selectedMember.image}
+                  alt={selectedMember.name}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+
+              <h3 className="text-2xl md:text-3xl font-bold text-white mb-1 text-center">
+                {selectedMember.name}
+              </h3>
+              <p className="text-lg text-purple-400 font-semibold mb-1 text-center">
+                {selectedMember.role}
+              </p>
+              {getCurrentBureau(selectedMember) && (
+                <p className="text-gray-400 text-sm mb-6">{getCurrentBureau(selectedMember)}</p>
+              )}
+
+              {/* Social Links */}
+              <div className="flex gap-4 mb-6">
+                {SHOW_MEMBER_LINKEDIN && selectedMember.linkedin && (
+                  <a
+                    href={selectedMember.linkedin}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-blue-600/20 text-blue-400 hover:bg-blue-600 hover:text-white p-3 rounded-full transition-all"
+                    aria-label="LinkedIn"
+                  >
+                    <Linkedin size={20} />
+                  </a>
+                )}
+                {selectedMember.github && (
+                  <a
+                    href={selectedMember.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-gray-700/50 text-gray-300 hover:bg-gray-700 hover:text-white p-3 rounded-full transition-all"
+                    aria-label="GitHub"
+                  >
+                    <Github size={20} />
+                  </a>
+                )}
+                {selectedMember.instagram && (
+                  <a
+                    href={selectedMember.instagram}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-pink-600/20 text-pink-400 hover:bg-pink-600 hover:text-white p-3 rounded-full transition-all"
+                    aria-label="Instagram"
+                  >
+                    <Instagram size={20} />
+                  </a>
+                )}
+                {selectedMember.email && (
+                  <a
+                    href={`mailto:${selectedMember.email}`}
+                    className="bg-green-600/20 text-green-400 hover:bg-green-600 hover:text-white p-3 rounded-full transition-all"
+                    aria-label="Email"
+                  >
+                    <Mail size={20} />
+                  </a>
+                )}
+              </div>
+            </div>
+
+            {selectedMember.quote && (
+              <div className="bg-gray-800/50 border border-gray-700/50 rounded-xl p-5 mb-6">
+                <p className="text-gray-300 italic text-center text-lg">"{selectedMember.quote}"</p>
+              </div>
+            )}
+
+            {selectedMember.bio && (
+              <div className="space-y-3">
+                <h4 className="text-sm font-semibold text-gray-400 uppercase tracking-wider">About</h4>
+                <p className="text-gray-300 leading-relaxed">{selectedMember.bio}</p>
+              </div>
+            )}
+          </div>
+        </div>
+      )}
     </section>
   )
 }

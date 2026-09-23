@@ -79,11 +79,6 @@ We welcome contributions from AppsClub members!
 - **LinkedIn**: [AppsClub ENSA](https://www.linkedin.com/company/appsclub-ensaa)
 - **YouTube**: [AppsClub ENSAA](https://www.youtube.com/@AppsClubENSAA)
 
-## 👨‍💻 Maintainers
-
-- **[Youssef Taguejgalet](https://www.linkedin.com/in/youssef-tag/)** - President
-- **[Houcine Gahboub](https://www.linkedin.com/in/houcine-gahboub-32955b32b)** - Training Officer
-
 ## 📄 License
 
 Open source for educational purposes - AppsClub ENSA Agadir members.

@@ -94,6 +94,16 @@ export default function Footer() {
               <span className="text-blue-400">in</span>
               Houcine Gahboub
             </a>
+            <span className="text-gray-400">a small touch</span>
+            <a
+              href="https://www.linkedin.com/in/younessbouhnif"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-purple-400 hover:text-purple-300 transition-colors duration-200 flex items-center gap-1"
+            >
+              <span className="text-blue-400">in</span>
+              Youness Bouhnif
+            </a>
           </div>
         </div>
       </div>
