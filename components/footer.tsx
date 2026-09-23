@@ -71,40 +71,8 @@ export default function Footer() {
         </div>
 
         {/* Bottom Section */}
-        <div className="border-t border-gray-700 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-gray-400 text-sm">© 2025/2026 AppsClub ENSA Agadir. All rights reserved.</p>
-          <div className="flex items-center gap-4 mt-4 md:mt-0 text-sm">
-            <span className="text-gray-400">Developed by</span>
-            <a
-              href="https://www.linkedin.com/in/youssef-tag/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-purple-400 hover:text-purple-300 transition-colors duration-200 flex items-center gap-1"
-            >
-              <span className="text-blue-400">in</span>
-              Youssef Taguejgalet
-            </a>
-            <span className="text-gray-400">and</span>
-            <a
-              href="https://www.linkedin.com/in/houcine-gahboub-32955b32b"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-purple-400 hover:text-purple-300 transition-colors duration-200 flex items-center gap-1"
-            >
-              <span className="text-blue-400">in</span>
-              Houcine Gahboub
-            </a>
-            <span className="text-gray-400">a small touch</span>
-            <a
-              href="https://www.linkedin.com/in/younessbouhnif"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-purple-400 hover:text-purple-300 transition-colors duration-200 flex items-center gap-1"
-            >
-              <span className="text-blue-400">in</span>
-              Youness Bouhnif
-            </a>
-          </div>
+        <div className="border-t border-gray-700 mt-8 pt-8 flex justify-center items-center">
+          <p className="text-gray-400 text-sm">© 2026/2027 AppsClub ENSA Agadir. All rights reserved.</p>
         </div>
       </div>
     </footer>

@@ -36,7 +36,7 @@ export default function VisionMission() {
               <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Rocket className="h-8 w-8 text-white" />
               </div>
-              <CardTitle className="text-2xl font-bold text-white">Mission 2024/2025</CardTitle>
+              <CardTitle className="text-2xl font-bold text-white">Mission 26/27</CardTitle>
             </CardHeader>
             <CardContent>
               <ul className="space-y-3 text-gray-300">

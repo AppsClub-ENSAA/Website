@@ -231,9 +231,9 @@ html::-webkit-scrollbar-thumb:hover {
   height: 400px !important;
   border-radius: 6px !important;
   margin: 0 auto 20px auto !important;
-  background: linear-gradient(135deg, #4facfe, #0052d4) !important;
-  box-shadow: 0 8px 25px rgba(79, 172, 254, 0.3), 0 4px 15px rgba(0, 82, 212, 0.2);
-  border: 1px solid rgba(79, 172, 254, 0.3);
+  background: linear-gradient(135deg, #b352d3 0%, #4710c2 100%) !important;
+  box-shadow: 0 8px 25px rgba(179, 82, 211, 0.3), 0 4px 15px rgba(71, 16, 194, 0.2);
+  border: 1px solid rgba(179, 82, 211, 0.3);
   position: relative;
   overflow: hidden;
 }
@@ -254,7 +254,7 @@ html::-webkit-scrollbar-thumb:hover {
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(135deg, rgba(79, 172, 254, 0.1), rgba(0, 82, 212, 0.1));
+  background: linear-gradient(135deg, rgba(179, 82, 211, 0.1) 0%, rgba(71, 16, 194, 0.1) 100%);
   border-radius: 6px;
   pointer-events: none;
   z-index: 1;
@@ -297,19 +297,6 @@ html::-webkit-scrollbar-thumb:hover {
   color: rgb(196 181 253);
   display: -webkit-box !important;
   -webkit-line-clamp: 2 !important;
-  -webkit-box-orient: vertical !important;
-  overflow: hidden !important;
-  text-overflow: ellipsis !important;
-}
-
-.member-quote-portrait {
-  font-style: italic !important;
-  font-size: 14px !important;
-  line-height: 1.4 !important;
-  min-height: 60px !important;
-  color: rgb(156 163 175);
-  display: -webkit-box !important;
-  -webkit-line-clamp: 3 !important;
   -webkit-box-orient: vertical !important;
   overflow: hidden !important;
   text-overflow: ellipsis !important;

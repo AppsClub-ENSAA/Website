@@ -75,9 +75,6 @@ export default function Team() {
                 <div className="text-content-portrait">
                   <div className="member-name-portrait">{member.name}</div>
                   <div className="member-role-portrait text-purple-400">{member.role}</div>
-                  {member.quote && (
-                    <div className="member-quote-portrait line-clamp-2">"{member.quote}"</div>
-                  )}
                 </div>
               </Card>
             ))}
