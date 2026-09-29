@@ -105,7 +105,7 @@ export default function MembersListPage() {
                     <img
                       src={member.image}
                       alt={member.name}
-                      className="w-full h-full object-cover"
+                      className="w-full h-full object-cover object-top"
                       onError={(e) => {
                         const target = e.target as HTMLImageElement
                         const initials = member.name.split(" ").map((n) => n[0]).join("").substring(0, 2)
@@ -165,7 +165,7 @@ export default function MembersListPage() {
                     <img
                       src={member.image}
                       alt={member.name}
-                      className="w-full h-full object-cover"
+                      className="w-full h-full object-cover object-top"
                       onError={(e) => {
                         const target = e.target as HTMLImageElement
                         const initials = member.name.split(" ").map((n) => n[0]).join("").substring(0, 2)
@@ -216,7 +216,7 @@ export default function MembersListPage() {
 
             <div className="flex flex-col items-center mt-2">
               <div className="w-36 h-36 rounded-full overflow-hidden border-4 border-purple-500/30 mb-6 shadow-lg">
-                <img src={selected.image} alt={selected.name} className="w-full h-full object-cover" />
+                <img src={selected.image} alt={selected.name} className="w-full h-full object-cover object-top" />
               </div>
 
               <h3 className="text-2xl font-bold text-white mb-1 text-center">{selected.name}</h3>

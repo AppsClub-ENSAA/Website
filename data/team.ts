@@ -24,7 +24,7 @@ export const currentTeamMembers: TeamMember[] = [
     name: "Hiba Ait Belmoumene",
     role: "President",
     quote: "Leading with purpose, innovation, and passion.",
-    image: "/images/team/hiba-ait-belmoumene.jpg",
+    image: "/images/team/hiba-ait-belmoumene.png",
     linkedin: "https://www.linkedin.com/in/hiba-a-0974032a1/",
     bureauHistory: [
       { bureau: "Executive Bureau", fromYear: 2025, toYear: null },
@@ -46,7 +46,7 @@ export const currentTeamMembers: TeamMember[] = [
     name: "Younes Ouzbid",
     role: "Treasurer",
     quote: "Behind every great initiative is strategic planning and execution.",
-    image: "/images/team/younes-ouzbid.jpg",
+    image: "/images/team/younes-ouzbid.png",
     bureauHistory: [
       { bureau: "Executive Bureau", fromYear: 2025, toYear: null }
     ]
@@ -56,7 +56,7 @@ export const currentTeamMembers: TeamMember[] = [
     name: "Chaimae Fekhar",
     role: "Secretary",
     quote: "Alone we dream, together we achieve.",
-    image: "/images/team/chaimae-fekhar.jpg",
+    image: "/images/team/chaimae-fekhar.png",
     bureauHistory: [
       { bureau: "Executive Bureau", fromYear: 2025, toYear: null }
     ]
@@ -66,7 +66,7 @@ export const currentTeamMembers: TeamMember[] = [
     name: "Soufiane El Barji",
     role: "Tech Lead",
     quote: "Innovating solutions, one line of code at a time.",
-    image: "/images/team/soufiane-el-barji.jpg",
+    image: "/images/team/soufiane-el-barji.png",
     bureauHistory: [
       { bureau: "Technical Cell", fromYear: 2025, toYear: null }
     ]
@@ -76,7 +76,7 @@ export const currentTeamMembers: TeamMember[] = [
     name: "Othmane Elarroussi",
     role: "Training Officer",
     quote: "The more you know, the more you realize you don't know.",
-    image: "/images/team/othmane-elarroussi.jpg",
+    image: "/images/team/othmane-elarroussi.png",
     linkedin: "https://www.linkedin.com/in/othmane-elarroussi",
     bureauHistory: [
       { bureau: "Training Cell", fromYear: 2025, toYear: null },
@@ -88,7 +88,7 @@ export const currentTeamMembers: TeamMember[] = [
     name: "Achraf Boulhem",
     role: "CP Cell Lead",
     quote: "Code. Compete. Improve.",
-    image: "/images/team/achraf-boulhem.jpg",
+    image: "/images/team/achraf-boulhem.png",
     linkedin: "https://www.linkedin.com/in/achraf-boulhem-b72286294",
     bureauHistory: [
       { bureau: "Competitive Programming Cell", fromYear: 2025, toYear: null },
@@ -110,7 +110,7 @@ export const currentTeamMembers: TeamMember[] = [
     name: "Ilyass Igouia",
     role: "Cybersecurity Cell Lead",
     quote: "Building, guiding, securing. That's the mission.",
-    image: "/images/team/ilyass-igouia.jpg",
+    image: "/images/team/ilyass-igouia.png",
     bureauHistory: [
       { bureau: "Cybersecurity Cell", fromYear: 2025, toYear: null }
     ]
@@ -120,7 +120,7 @@ export const currentTeamMembers: TeamMember[] = [
     name: "Mohamed Amine Bougraou",
     role: "Logistics Officer",
     quote: "Behind the scenes, ahead of the need.",
-    image: "/images/team/mohamed-amine-bougraou.jpg",
+    image: "/images/team/mohamed-amine-bougraou.png",
     linkedin: "https://www.linkedin.com/in/mohamed-amine-bougraou-38b792335",
     bureauHistory: [
       { bureau: "Logistics", fromYear: 2025, toYear: null },
@@ -132,7 +132,7 @@ export const currentTeamMembers: TeamMember[] = [
     name: "Hakim Echahbi",
     role: "Design Leader",
     quote: "Less noise. More impact.",
-    image: "/images/team/hakim-echahbi.jpg",
+    image: "/images/team/hakim-echahbi.png",
     bureauHistory: [
       { bureau: "Design Cell", fromYear: 2025, toYear: null }
     ]
@@ -142,7 +142,7 @@ export const currentTeamMembers: TeamMember[] = [
     name: "Mustapha Mouchtarik",
     role: "Assistant Member",
     quote: "Learn, Share, Code together!",
-    image: "/images/team/mustapha-mouchtarik.jpg",
+    image: "/images/team/mustapha-mouchtarik.png",
     isAssistant: true,
     bureauHistory: [
       { bureau: "Development Cell", fromYear: 2025, toYear: null }
